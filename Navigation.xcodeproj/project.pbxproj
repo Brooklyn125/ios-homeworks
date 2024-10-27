@@ -29,6 +29,11 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		C4A0A5C12CCE5BD700944041 /* Profile */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 		C41FFFCD2CB84DA900D48843 = {
 			isa = PBXGroup;
 			children = (
+				C4A0A5C12CCE5BD700944041 /* Profile */,
 				C41FFFD82CB84DA900D48843 /* Navigation */,
 				C41FFFD72CB84DA900D48843 /* Products */,
 			);
@@ -75,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C41FFFD82CB84DA900D48843 /* Navigation */,
+				C4A0A5C12CCE5BD700944041 /* Profile */,
 			);
 			name = Navigation;
 			packageProductDependencies = (
