@@ -15,6 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         
+        let profileVC = ProfileViewController()
+        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 1)
+        
         let tabBarController = UITabBarController()
 
         let feedNavController = UINavigationController(rootViewController: FeedViewController())

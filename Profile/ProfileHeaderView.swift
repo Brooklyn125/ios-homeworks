@@ -35,7 +35,7 @@ class ProfileHeaderView: UIView {
         return label
     }()
     
-    private let button: UIButton = {
+    private lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show status", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -46,6 +46,7 @@ class ProfileHeaderView: UIView {
         button.layer.shadowRadius = 4
         button.layer.shadowOpacity = 0.7
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -83,8 +84,6 @@ class ProfileHeaderView: UIView {
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     @objc private func buttonPressed() {
