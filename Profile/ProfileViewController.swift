@@ -29,23 +29,21 @@ class ProfileViewController: UIViewController {
                                     name: "Hipster Cat",
                                     status: "Waiting for something...")
         addProfileHeaderView()
-       }
-
-       private func addProfileHeaderView() {
-           view.addSubview(profileHeaderView)
-           
-           profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint.activate([
-               profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-               profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-               profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-               profileHeaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-           ])
-       }
+    }
+    
+    private func addProfileHeaderView() {
+        view.addSubview(profileHeaderView)
+        
+        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileHeaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        profileHeaderView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
     }
 }

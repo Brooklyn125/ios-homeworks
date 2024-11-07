@@ -62,10 +62,7 @@ class ProfileHeaderView: UIView {
     private func setupView() {
         backgroundColor = .lightGray
         
-        addSubview(imageView)
-        addSubview(nameLabel)
-        addSubview(statusLabel)
-        addSubview(button)
+        addSubviews()
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
@@ -84,6 +81,13 @@ class ProfileHeaderView: UIView {
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    private func addSubviews() {
+        addSubview(imageView)
+        addSubview(nameLabel)
+        addSubview(statusLabel)
+        addSubview(button)
     }
     
     @objc private func buttonPressed() {
