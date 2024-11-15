@@ -10,9 +10,22 @@
 		C41FFFD62CB84DA900D48843 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C4BABA5E2CE7D1F300B95595 /* Exceptions for "Navigation" folder in "Navigation" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C41FFFD52CB84DA900D48843 /* Navigation */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C41FFFD82CB84DA900D48843 /* Navigation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C4BABA5E2CE7D1F300B95595 /* Exceptions for "Navigation" folder in "Navigation" target */,
+			);
 			path = Navigation;
 			sourceTree = "<group>";
 		};

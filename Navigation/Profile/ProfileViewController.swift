@@ -9,41 +9,59 @@ import Foundation
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
+
     private let profileHeaderView = ProfileHeaderView()
-    
+    private let actionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Perform Action", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .lightGray
-        
+        view.backgroundColor = .white
+
+        setupNavigationBar()
+        setupProfileHeaderView()
+        setupActionButton()
+    }
+
+    private func setupNavigationBar() {
         let titleLabel = UILabel()
         titleLabel.text = "Profile"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
         titleLabel.textColor = .black
         navigationItem.titleView = titleLabel
-        
-        view.addSubview(profileHeaderView)
-        
-        profileHeaderView.configure(profileImage: UIImage(named: "catImage") ?? UIImage(),
-                                    name: "Hipster Cat",
-                                    status: "Waiting for something...")
-        addProfileHeaderView()
     }
-    
-    private func addProfileHeaderView() {
+
+    private func setupProfileHeaderView() {
         view.addSubview(profileHeaderView)
-        
+        profileHeaderView.configure(profileImage: UIImage(named: "catImage") ?? UIImage(),
+                                    fullName: "Hipster Cat",
+                                    status: "Waiting for something...")
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            profileHeaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
         ])
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+
+    private func setupActionButton() {
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            actionButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
